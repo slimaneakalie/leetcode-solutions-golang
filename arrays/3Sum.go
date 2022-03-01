@@ -3,6 +3,7 @@ package arrays
 import "sort"
 
 // Problem: https://leetcode.com/problems/3sum/
+// Solution's complexity: O(n²) time, O(n) space where n is the size of the input
 
 func threeSum(nums []int) [][]int {
 	size, triplets := len(nums), [][]int{}
