@@ -1,7 +1,5 @@
 package dynamic_programming
 
-import "github.com/slimaneakalie/leetcode-solutions-golang/utils"
-
 // Problem: https://leetcode.com/problems/longest-increasing-subsequence
 // Solution's complexity: O(n^2) time, O(n) space where n is the size of the input
 
@@ -15,7 +13,7 @@ func lengthOfLIS(nums []int) int {
 
 		for j := i + 1; j < size; j++ {
 			if nums[j] > nums[i] {
-				maxSoFar = utils.MaxInts(maxSoFar, dp[j])
+				maxSoFar = max(maxSoFar, dp[j])
 			}
 		}
 
@@ -24,4 +22,12 @@ func lengthOfLIS(nums []int) int {
 	}
 
 	return maxLength
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+
+	return b
 }
