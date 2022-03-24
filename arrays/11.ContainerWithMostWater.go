@@ -8,13 +8,12 @@ func maxArea(height []int) int {
 
 	for left < right {
 		gap := right - left
+
 		var minAmount int
 		if height[left] < height[right] {
-			minAmount = height[left]
-			left++
+			minAmount, left = height[left], left+1
 		} else {
-			minAmount = height[right]
-			right--
+			minAmount, right = height[right], right-1
 		}
 
 		maxAmount = max(gap*minAmount, maxAmount)
